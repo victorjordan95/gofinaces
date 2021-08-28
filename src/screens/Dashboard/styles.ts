@@ -1,5 +1,6 @@
 import { Feather } from '@expo/vector-icons';
 import { FlatList } from 'react-native';
+import { BorderlessButton } from 'react-native-gesture-handler';
 import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
@@ -12,37 +13,35 @@ export const Container = styled.View`
 
 export const Header = styled.SafeAreaView`
   align-items: flex-start;
-  /* justify-content: center; */
-
-  width: 100%;
-  height: ${RFPercentage(42)}px;
   background-color: ${({theme}) => theme.colors.primary};
+  height: ${RFPercentage(42)}px;
+  width: 100%;
 `;
 
 export const UserWrapper = styled.View `
   align-items: center;
-  justify-content: space-between;
   flex-direction: row;
-  padding: 0 24px;
+  justify-content: space-between;
   margin-top: ${getStatusBarHeight() + RFValue(28)}px;
+  padding: 0 24px;
   width: 100%;
 `
 export const UserInfo = styled.View`
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
 `;
 
 export const Photo = styled.Image`
+  border-radius: 10px;
   height: ${RFValue(48)}px;
   width: ${RFValue(48)}px;
-
-  border-radius: 10px;
 `;
 
 export const User = styled.View`
   margin-left: 17px;
 `;
 
+export const LogoutButton = styled(BorderlessButton)``
 
 export const UserGreeting = styled.Text`
   color: ${({theme}) => theme.colors.shape};
